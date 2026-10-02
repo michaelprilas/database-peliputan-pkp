@@ -1,0 +1,18 @@
+{
+  "name": "tubik-studio-website",
+  "version": "1.0.0",
+  "description": "Award-winning UX and branding agency website modeled after Tubik Studio.",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "dev": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "tubik",
+    "ux-design",
+    "branding",
+    "agency",
+    "portfolio"
+  ],
+  "author": "Tubik Studio Style Showcase",
+  "license": "MIT"
+}

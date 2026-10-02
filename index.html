@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Tim Peliputan dan Publikasi — Kementerian PKP</title>
+  <meta name="description" content="Mesin pencari database resmi Tim Peliputan dan Publikasi Kementerian Perumahan dan Kawasan Permukiman RI." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo-pkp.svg" />
+  <link rel="apple-touch-icon" href="assets/logo-pkp.svg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="body-tubik">
+
+  <!-- Custom Magnetic Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-follower">
+      <span class="cursor-text">EXPLORE</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <!-- Logo Kementerian PKP -->
+      <a href="#" class="brand-logo" id="brandLogoHome" aria-label="Database Tim Peliputan dan Publikasi">
+        <img src="assets/logo-pkp.svg" alt="Logo Kementerian PKP" class="brand-logo-img" />
+        <div class="brand-text-group">
+          <span class="brand-text">Database Tim Peliputan dan Publikasi</span>
+          <span class="brand-badge-sub">Kementerian Perumahan &amp; Kawasan Permukiman</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links with Rolling Text Animation -->
+      <nav class="nav-links" id="desktopNav">
+        <button class="nav-link is-active" data-view="search">
+          <span class="roll-wrapper">
+            <span class="roll-item">search</span>
+            <span class="roll-item">search</span>
+          </span>
+        </button>
+        <button class="nav-link" data-view="dashboard">
+          <span class="roll-wrapper">
+            <span class="roll-item">dashboard</span>
+            <span class="roll-item">dashboard</span>
+          </span>
+        </button>
+        <button class="nav-link" data-view="export">
+          <span class="roll-wrapper">
+            <span class="roll-item">export data</span>
+            <span class="roll-item">export data</span>
+          </span>
+        </button>
+        <a href="https://docs.google.com/spreadsheets/d/13dg8qLpGKshNHZ0LMofiWHU17UIeoSgQU4Y34uj4ZF8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-link">
+          <span class="roll-wrapper">
+            <span class="roll-item">google sheet ↗</span>
+            <span class="roll-item">google sheet ↗</span>
+          </span>
+        </a>
+      </nav>
+
+      <!-- Right Actions: Total Count Pill & Fast Action -->
+      <div class="header-actions">
+        <div class="live-counter-pill" id="headerCounter">
+          <span class="count-num">420</span>
+          <span class="count-label">kegiatan</span>
+        </div>
+        <button class="btn-primary btn-quick-search" id="btnQuickSearchFocus">
+          <span class="roll-wrapper">
+            <span class="roll-item">cari cepat</span>
+            <span class="roll-item">cari cepat</span>
+          </span>
+        </button>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-links">
+        <button class="mobile-nav-link is-active" data-view="search">search</button>
+        <button class="mobile-nav-link" data-view="dashboard">dashboard</button>
+        <button class="mobile-nav-link" data-view="export">export data</button>
+        <a href="https://docs.google.com/spreadsheets/d/13dg8qLpGKshNHZ0LMofiWHU17UIeoSgQU4Y34uj4ZF8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">google sheet ↗</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <div class="mobile-contact-pill">
+          <span>Kementerian Perumahan dan Kawasan Permukiman RI</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+    <!-- ===================================================================
+         VIEW 1: SEARCH ENGINE (DEFAULT & PRIMARY)
+         =================================================================== -->
+    <section class="app-view is-active" id="viewSearch">
+      
+      <!-- HERO SEARCH HEADER -->
+      <div class="section-search-hero">
+        <div class="container">
+          <div class="search-hero-content">
+            <p class="hero-label">Database Tim Peliputan dan Publikasi &bull; Kementerian PKP</p>
+            <h1 class="hero-title">
+              <span class="title-line">Temukan data</span>
+              <span class="title-line">kegiatan &amp; berita</span>
+            </h1>
+            <p class="search-hero-desc">
+              Ketik kata kunci untuk mencari seluruh dokumentasi kegiatan, lokasi peliputan, publikasi berita, dan video secara instan tanpa jeda.
+            </p>
+
+            <!-- Search Input Box -->
+            <div class="search-box-wrap" id="searchBoxWrap">
+              <div class="search-icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <input 
+                type="text" 
+                id="mainSearchInput" 
+                class="main-search-input" 
+                placeholder="Cari kegiatan (contoh: Meikarta, Natal, Bali, BSPS, Susun)..." 
+                autocomplete="off" 
+                spellcheck="false" 
+              />
+              <button class="btn-clear-search" id="btnClearSearch" aria-label="Bersihkan pencarian" style="display:none;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+              <div class="search-shortcut-badge">
+                <kbd>/</kbd>
+              </div>
+            </div>
+
+            <!-- Quick Filter Chips -->
+            <div class="quick-filter-scroll">
+              <div class="quick-filter-row" id="quickFilterRow">
+                <button class="filter-chip is-active" data-filter="all">Semua Data (420)</button>
+                <button class="filter-chip" data-filter="has-news">📰 Ada Berita (282)</button>
+                <button class="filter-chip" data-filter="has-video">🎬 Ada Video (311)</button>
+                <button class="filter-chip" data-filter="loc-jakarta">📍 DKI Jakarta</button>
+                <button class="filter-chip" data-filter="loc-jabar">📍 Jawa Barat</button>
+                <button class="filter-chip" data-filter="loc-jatim">📍 Jawa Timur</button>
+                <button class="filter-chip" data-filter="loc-bali">📍 Bali &amp; NTB</button>
+                <button class="filter-chip" data-filter="loc-sumatera">📍 Sumatera</button>
+                <button class="filter-chip" data-filter="loc-sulawesi">📍 Sulawesi</button>
+                <button class="filter-chip" data-filter="loc-kalimantan">📍 Kalimantan</button>
+                <button class="filter-chip" data-filter="loc-papua">📍 Papua</button>
+                <button class="filter-chip" data-filter="date-sep">🗓️ September 2026</button>
+                <button class="filter-chip" data-filter="date-agu">🗓️ Agustus 2026</button>
+                <button class="filter-chip" data-filter="date-jul">🗓️ Juli 2026</button>
+                <button class="filter-chip" data-filter="date-jun">🗓️ Juni 2026</button>
+                <button class="filter-chip" data-filter="date-mei">🗓️ Mei 2026</button>
+                <button class="filter-chip" data-filter="date-apr">🗓️ April 2026</button>
+                <button class="filter-chip" data-filter="date-mar">🗓️ Maret 2026</button>
+                <button class="filter-chip" data-filter="date-feb">🗓️ Februari 2026</button>
+                <button class="filter-chip" data-filter="date-jan">🗓️ Januari 2026</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH RESULTS SECTION -->
+      <div class="section-search-results">
+        <div class="container">
+          
+          <!-- Initial Prompt State (Visible before searching) -->
+          <div class="initial-search-prompt" id="initialSearchPrompt">
+            <div class="prompt-icon-box">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="prompt-title">Mulai Pencarian Kegiatan</h3>
+            <p class="prompt-desc">
+              Ketik kata kunci nama kegiatan, lokasi, menteri/pejabat pada kolom pencarian di atas, atau pilih salah satu filter cepat untuk memunculkan daftar kegiatan.
+            </p>
+            <div class="prompt-tags-wrap">
+              <span class="prompt-tags-label">Rekomendasi pencarian populer:</span>
+              <div class="prompt-tags-list">
+                <button type="button" class="search-hint-tag" data-query="Meikarta">Meikarta</button>
+                <button type="button" class="search-hint-tag" data-query="Rusun">Rusun</button>
+                <button type="button" class="search-hint-tag" data-query="Natal">Natal</button>
+                <button type="button" class="search-hint-tag" data-query="BSPS">BSPS</button>
+                <button type="button" class="search-hint-tag" data-query="Bali">Bali</button>
+                <button type="button" class="search-hint-tag" data-query="Bandung">Bandung</button>
+                <button type="button" class="search-hint-tag" data-query="DPR">DPR RI</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Controls Bar (Shown only when searching) -->
+          <div class="results-controls-bar" id="resultsControlsBar" style="display: none;">
+            <div class="results-stats">
+              <span class="results-heading">Hasil Penelusuran</span>
+              <span class="results-count" id="resultsCount">Menampilkan hasil kegiatan</span>
+            </div>
+
+            <div class="results-actions">
+              <div class="sort-dropdown-wrap">
+                <label for="sortSelect" class="sort-label">Urutan:</label>
+                <select id="sortSelect" class="sort-select">
+                  <option value="num-asc">Nomor Urut (Default)</option>
+                  <option value="date-desc">Tanggal Terbaru &rarr; Terlama</option>
+                  <option value="date-asc">Tanggal Terlama &rarr; Terbaru</option>
+                  <option value="title-asc">Nama Kegiatan (A-Z)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards List Container (1 Kolom / Baris Saja) -->
+          <div class="kegiatan-grid" id="kegiatanGrid">
+            <!-- Rendered dynamically by app.js when search is active -->
+          </div>
+
+          <!-- Empty State (Hidden by default) -->
+          <div class="empty-state-card" id="emptyState" style="display: none;">
+            <div class="empty-icon-wrap">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="empty-title">Tidak ada kegiatan yang cocok</h3>
+            <p class="empty-desc" id="emptyMessage">Coba gunakan kata kunci yang lebih umum seperti "Rusun", "Bali", "Natal", atau klik tombol di bawah untuk mereset.</p>
+            <button class="btn-primary btn-reset-search" id="btnResetSearch">Reset Semua Pencarian</button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         VIEW 2: DASHBOARD (STATISTICS & ANALYTICS)
+         =================================================================== -->
+    <section class="app-view" id="viewDashboard" style="display: none;">
+      <div class="container">
+        
+        <div class="dashboard-header">
+          <span class="section-subtitle">statistik &amp; analitik</span>
+          <h2 class="section-title">Dashboard Peliputan</h2>
+          <p class="dashboard-intro">Ringkasan cakupan kegiatan, rasio publikasi media berita, dan sebaran wilayah kerja.</p>
+        </div>
+
+        <!-- Metric Stat Cards -->
+        <div class="metrics-grid">
+          
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-label">Total Kegiatan</span>
+              <div class="metric-icon bg-purple">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value" id="statTotalKegiatan">420</div>
+            <div class="metric-footer">Terdata di database Google Sheets</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-label">Wilayah &amp; Lokasi</span>
+              <div class="metric-icon bg-green">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value" id="statTotalLokasi">50+</div>
+            <div class="metric-footer">Kabupaten, Kota, &amp; Provinsi</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-label">Publikasi Berita</span>
+              <div class="metric-icon bg-blue">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value" id="statBeritaPct">67%</div>
+            <div class="metric-footer" id="statBeritaCount">282 rilis berita di pkp.go.id</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-label">Publikasi Video</span>
+              <div class="metric-icon bg-orange">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="23 7 16 12 23 17 23 7"/>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value" id="statVideoPct">74%</div>
+            <div class="metric-footer" id="statVideoCount">311 video dokumentasi &amp; reels</div>
+          </div>
+
+        </div>
+
+        <!-- Dashboard Charts Row -->
+        <div class="dashboard-charts-grid">
+          
+          <!-- Chart 1: Volume Kegiatan per Bulan -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3 class="chart-card-title">Volume Kegiatan per Bulan (2026)</h3>
+              <span class="chart-tag">Jan &ndash; Sep 2026 (420 Data)</span>
+            </div>
+            <div class="bar-chart-container" id="monthlyBarChart">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Chart 2: Top Lokasi Peliputan -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3 class="chart-card-title">Sebaran Wilayah Terbanyak</h3>
+              <span class="chart-tag">Top Wilayah</span>
+            </div>
+            <div class="location-bars-container" id="locationProgressBars">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quick Navigate CTA -->
+        <div class="dashboard-cta-banner">
+          <div class="cta-text">
+            <h4>Ingin mencari detail kegiatan tertentu?</h4>
+            <p>Gunakan mesin pencari untuk melihat langsung kartu detail dan tautan publikasi berita/video.</p>
+          </div>
+          <button class="btn-primary" data-view="search">Buka Mesin Pencari &rarr;</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW 3: EXPORT DATA
+         =================================================================== -->
+    <section class="app-view" id="viewExport" style="display: none;">
+      <div class="container">
+        
+        <div class="export-header">
+          <span class="section-subtitle">data portability</span>
+          <h2 class="section-title">Export Database</h2>
+          <p class="export-intro">Unduh seluruh isi database kegiatan peliputan dalam berbagai format standar untuk keperluan laporan dan arsip.</p>
+        </div>
+
+        <!-- Export Action Cards -->
+        <div class="export-cards-grid">
+          
+          <div class="export-action-card" id="btnExportCSV">
+            <div class="export-card-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="8" y1="13" x2="16" y2="13"/>
+                <line x1="8" y1="17" x2="16" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="export-card-title">Unduh Format CSV</h3>
+            <p class="export-card-desc">Kompatibel universal dengan Google Sheets, Excel, SPSS, dan database SQL.</p>
+            <span class="btn-export-link">Download .CSV &darr;</span>
+          </div>
+
+          <div class="export-action-card" id="btnExportExcel">
+            <div class="export-card-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="9" y1="3" x2="9" y2="21"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+              </svg>
+            </div>
+            <h3 class="export-card-title">Unduh Excel Spreadsheet</h3>
+            <p class="export-card-desc">File CSV ber-BOM UTF-8 siap buka langsung di Microsoft Excel tanpa font error.</p>
+            <span class="btn-export-link">Download Excel .CSV &darr;</span>
+          </div>
+
+
+          <div class="export-action-card" id="btnPrintReport">
+            <div class="export-card-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+            </div>
+            <h3 class="export-card-title">Cetak / Simpan PDF</h3>
+            <p class="export-card-desc">Tampilan cetak rapi siap arsip fisik atau disimpan sebagai dokumen PDF.</p>
+            <span class="btn-export-link">Cetak Dokumen &darr;</span>
+          </div>
+
+        </div>
+
+        <!-- Table Data Preview Section -->
+        <div class="export-preview-box">
+          <div class="preview-box-header">
+            <h3 class="preview-title">Pratinjau Data Lengkap (<span id="tablePreviewCount">420</span> Baris)</h3>
+            <a href="https://docs.google.com/spreadsheets/d/13dg8qLpGKshNHZ0LMofiWHU17UIeoSgQU4Y34uj4ZF8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-open-sheet">
+              Buka di Google Sheets Asli ↗
+            </a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="tubik-table" id="previewTable">
+              <thead>
+                <tr>
+                  <th style="width: 60px;">No</th>
+                  <th style="width: 120px;">Tanggal</th>
+                  <th>Kegiatan</th>
+                  <th style="width: 180px;">Lokasi</th>
+                  <th style="width: 140px;">Publikasi Berita</th>
+                  <th style="width: 140px;">Publikasi Video</th>
+                  <th style="width: 100px;">Petugas</th>
+                </tr>
+              </thead>
+              <tbody id="previewTableBody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       DETAIL MODAL DRAWER (DETAIL KEGIATAN)
+       =================================================================== -->
+  <div class="modal-backdrop" id="detailModal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog detail-dialog">
+      
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup Detail">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="detail-modal-body">
+        
+        <!-- Header Badges -->
+        <div class="detail-header-badges">
+          <span class="badge-num" id="modalNomor">#01</span>
+          <span class="badge-date" id="modalTanggal">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span id="modalTanggalText">03/01/2026</span>
+          </span>
+          <span class="badge-loc" id="modalLokasiBadge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span id="modalLokasiText">Jakarta Pusat, Jakarta</span>
+          </span>
+        </div>
+
+        <!-- Main Title -->
+        <h2 class="detail-title" id="modalKegiatan">Seminar Natal Nasional</h2>
+
+        <!-- Detail Meta Grid -->
+        <div class="detail-meta-cards">
+          
+          <div class="meta-box">
+            <span class="meta-box-label">Publikasi Berita Resmi</span>
+            <div id="modalBeritaBox">
+              <!-- Injected dynamically -->
+            </div>
+          </div>
+
+          <div class="meta-box">
+            <span class="meta-box-label">Publikasi Video / Reels</span>
+            <div id="modalVideoBox">
+              <!-- Injected dynamically -->
+            </div>
+          </div>
+
+          <div class="meta-box full-width">
+            <span class="meta-box-label">Petugas Peliputan Terdata</span>
+            <div class="meta-box-val" id="modalPetugasText">Petugas: -</div>
+          </div>
+
+        </div>
+
+        <!-- Modal Actions Footer -->
+        <div class="detail-modal-actions">
+          <button class="btn-modal-action btn-copy-summary" id="btnCopySummary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            <span>Salin Ringkasan Kegiatan</span>
+          </button>
+          
+          <div class="modal-nav-arrows">
+            <button class="modal-arrow-btn" id="modalPrevBtn" title="Kegiatan Sebelumnya">
+              &larr; Sebelumnya
+            </button>
+            <button class="modal-arrow-btn" id="modalNextBtn" title="Kegiatan Berikutnya">
+              Berikutnya &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GOOGLE SHEETS REALTIME CONFIG & DIAGNOSTIC MODAL -->
+  <div class="modal-backdrop" id="sheetConfigModal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog detail-dialog" style="max-width: 640px;">
+      <button class="modal-close-btn" id="configModalCloseBtn" aria-label="Tutup Pengaturan">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="detail-modal-body">
+        <div class="detail-header-badges">
+          <span class="badge-num">REALTIME SYNC</span>
+          <span class="badge-date" id="configSyncBadge">Status: Aktif</span>
+        </div>
+
+        <h2 class="detail-title" style="font-size: 1.75rem; margin-bottom: 1.25rem;">Koneksi Google Sheets</h2>
+        <p style="color: var(--color-text-muted); font-size: 0.9375rem; margin-bottom: 2rem;">
+          Aplikasi ini terhubung langsung ke Google Sheets Anda. Setiap penambahan atau perubahan baris di spreadsheet akan otomatis terdeteksi dan tersinkronkan.
+        </p>
+
+        <div class="detail-meta-cards" style="grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem;">
+          <div class="meta-box">
+            <span class="meta-box-label">Spreadsheet Terhubung</span>
+            <div class="meta-box-val" style="word-break: break-all; font-size: 0.85rem;">
+              https://docs.google.com/spreadsheets/d/13dg8qLpGKshNHZ0LMofiWHU17UIeoSgQU4Y34uj4ZF8/edit?usp=sharing
+            </div>
+          </div>
+          <div class="meta-box">
+            <span class="meta-box-label">Sheet Tab &amp; GID</span>
+            <div class="meta-box-val" style="font-size: 0.875rem;">
+              Tab: <strong>Laporan Coverage</strong> &bull; GID: <code>1265353506</code>
+            </div>
+          </div>
+          <div class="meta-box">
+            <span class="meta-box-label">Waktu Sinkronisasi Terakhir</span>
+            <div class="meta-box-val" id="configLastSyncTime" style="color: var(--color-accent); font-size: 0.9375rem;">
+              Baru saja
+            </div>
+          </div>
+          <div class="meta-box">
+            <span class="meta-box-label">Total Data Berhasil Terbaca</span>
+            <div class="meta-box-val" id="configTotalDataCount" style="font-weight: 800; font-size: 1.15rem;">
+              420 Kegiatan
+            </div>
+          </div>
+        </div>
+
+        <div style="background-color: var(--color-surface-soft); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; border: 1px solid var(--color-border);">
+          <h4 style="font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem;">💡 Tips Realtime Google Sheets:</h4>
+          <ul style="font-size: 0.8125rem; color: var(--color-text-muted); padding-left: 1.25rem; line-height: 1.6;">
+            <li>Pastikan izin share spreadsheet disetel ke: <strong>"Siapa saja yang memiliki link dapat melihat"</strong> (sudah aktif).</li>
+            <li>Jika Anda menambah baris kegiatan baru di spreadsheet, baris tersebut akan otomatis terbaca saat Anda klik <strong>Sinkronkan Sekarang</strong> atau setiap interval 30 detik.</li>
+          </ul>
+        </div>
+
+        <div class="detail-modal-actions" style="justify-content: flex-end; gap: 0.75rem;">
+          <button class="btn-primary" id="btnTestSyncFromModal" style="padding: 0.65rem 1.5rem;">
+            🔄 Uji Sinkronisasi Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <span class="toast-message">Pesan notifikasi</span>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-row">
+        <div class="footer-col-left">
+          <div class="footer-section-title">Peliputan &amp; Publikasi</div>
+          <div class="footer-brand-title">Database Tim Peliputan dan Publikasi</div>
+          <p class="pdf-caption" style="margin-top: 0.5rem; max-width: 480px;">
+            Sistem pencarian dan arsip digital kegiatan peliputan resmi Kementerian Perumahan dan Kawasan Permukiman RI.
+          </p>
+        </div>
+        <div class="footer-col-right">
+          <div class="footer-section-title">tautan resmi</div>
+          <div class="footer-social-grid">
+            <a href="https://docs.google.com/spreadsheets/d/13dg8qLpGKshNHZ0LMofiWHU17UIeoSgQU4Y34uj4ZF8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="social-link">Google Sheets Asli ↗</a>
+            <a href="https://pkp.go.id" target="_blank" rel="noopener noreferrer" class="social-link">Portal PKP.go.id ↗</a>
+            <button class="social-link" id="footerExportLink">Export Data CSV</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <p class="copyright-text">
+          Database Tim Peliputan dan Publikasi &copy; 2026 Kementerian Perumahan dan Kawasan Permukiman RI.
+        </p>
+        <div class="footer-creds">
+          <span>Kementerian PKP &bull; Sistem Terpadu</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Initial Data first, then App logic -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
